@@ -40,7 +40,7 @@ function setup() {
   leftWall = new Base(100, height - 300, 200, height / 2 + 100);
   rightWall = new Base(width - 100, height - 300, 200, height / 2 + 100);
 
-  bridge = new Bridge(30, { x: 50, y: height / 2 - 140 });
+  bridge = new Bridge(20, { x: 50, y: height / 2 - 140 });
   jointPoint = new Base(width - 250, height / 2 - 100, 40, 20);
 
   Matter.Composite.add(bridge.body, jointPoint);
@@ -77,7 +77,7 @@ function draw() {
     stone.show();
     var pos = stone.body.position;
     
-    //var distance = dist(zombie.position.x, zombie.position.y, pos.x, pos.y);
+    var distance = dist(zombie.position.x, zombie.position.y, pos.x, pos.y);
     //var distance = dist(zombie.position.x, zombie.position.y);
     //var distance = dist(pos.x, pos.y);
     //var distance = dist(zombie, pos);
@@ -97,12 +97,12 @@ function draw() {
       collided = true;
     }*/
 
-    /*if (distance <= 50) {
+    if (distance <= 50) {
       zombie.velocityX = 0;
       Matter.Body.setVelocity(stone.body, { x: 10, y: -10 });
       zombie.changeImage("sad");
       collided = true;
-    }*/
+    }
 
     /*if (distance <= 50) {
       zombie.velocityX = 0;
